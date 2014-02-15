@@ -2,7 +2,7 @@ package jElo;
 
 public class ELOPlayer {
 
-	public static final int DEFAULT_STARTING_RATING = 1500;
+	public static int DEFAULT_STARTING_RATING = 1500;
 	
 	private int rating;
 	private String name;
