@@ -1,5 +1,6 @@
+package jElo;
 
-public class Calculator {
+public class ELOCalculator {
 
 	public static final int K = 32;
 	

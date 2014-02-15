@@ -1,5 +1,6 @@
+package jElo;
 
-public class Player {
+public class ELOPlayer {
 
 	public static final int DEFAULT_STARTING_RATING = 1500;
 	
@@ -12,11 +13,11 @@ public class Player {
 	 * 
 	 * @param name
 	 */
-	public Player(String name) {
+	public ELOPlayer(String name) {
 		this(name, DEFAULT_STARTING_RATING);
 	}
 	
-	public Player(String name, int rating) {
+	public ELOPlayer(String name, int rating) {
 		this.name = name;
 		this.rating = rating;
 	}
