@@ -9,10 +9,21 @@ public class ELOCalculator {
 	 * 
 	 * @param rating1	The player's rating
 	 * @param rating2	The other player's rating
-	 * @return			The expected score (0-1)
+	 * @return			The expected score (0-1), where loss=0, draw=0.5, win=1
 	 */
 	public static double calculateExpectedScore(int rating1, int rating2) {
 		return 1 / (1.0 + Math.pow(10.0, (rating2 - rating1) / 400.0));
+	}
+	
+	/**
+	 * Calculate the expected score for player1 when facing player2
+	 * 
+	 * @param player1
+	 * @param player2
+	 * @return			The expected score (0-1), where loss=0, draw=0.5, win=1
+	 */
+	public static double calculateExpectedScore(ELOPlayer player1, ELOPlayer player2) {
+		return calculateExpectedScore(player1.getRating(), player2.getRating());
 	}
 	
 	/**
@@ -25,6 +36,19 @@ public class ELOCalculator {
 	 */
 	public static int calculateRatingChange(int rating1, int rating2, double score) {
 		return (int) Math.round(K * (score - calculateExpectedScore(rating1, rating2)));
+	}
+	
+	/**
+	 * Calculate the rating change for player1 when facing player2, 
+	 * and obtaining the given score
+	 * 
+	 * @param player1
+	 * @param player2
+	 * @param score		The player's obtained score, where loss=0, draw=0.5, win=1
+	 * @return
+	 */
+	public static int calculateRatingChange(ELOPlayer player1, ELOPlayer player2, double score) {
+		return calculateRatingChange(player1.getRating(), player2.getRating(), score);
 	}
 	
 	public static void main(String[] args) {
