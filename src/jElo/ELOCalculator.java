@@ -2,7 +2,7 @@ package jElo;
 
 public class ELOCalculator {
 
-	public static final int K = 32;
+	public static int K = 32;
 	
 	/**
 	 * Calculate the expected score for the player with rating1
